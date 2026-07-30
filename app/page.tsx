@@ -3,8 +3,8 @@
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { useRef } from "react";
-import PrimaryButton from "./component/PrimaryButton";
-import ScalingMessage from "./component/ScalingMessage";
+import PrimaryButton from "./component-ui/PrimaryButton";
+import ScalingMessage from "./component-ui/ScalingMessage";
 
 export default function Home() {
   gsap.registerPlugin(useGSAP);
