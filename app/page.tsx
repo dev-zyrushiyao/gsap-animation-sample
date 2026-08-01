@@ -5,6 +5,7 @@ import gsap from "gsap";
 import { useRef } from "react";
 import PrimaryButton from "./component-ui/PrimaryButton";
 import ScalingMessage from "./component-ui/ScalingMessage";
+import MovingImage from "./component-ui/MovingImage";
 
 export default function Home() {
   gsap.registerPlugin(useGSAP);
@@ -43,6 +44,7 @@ export default function Home() {
       </div>
       <PrimaryButton />
       <ScalingMessage />
+      <MovingImage />
     </main>
   );
 }

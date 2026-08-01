@@ -31,7 +31,7 @@ export default function ScalingMessage() {
           "-=2",
         );
 
-      GSDevTools.create({ animation: tl.current });
+      // GSDevTools.create({ animation: tl.current });
     },
     { scope: container },
   );
@@ -47,7 +47,7 @@ export default function ScalingMessage() {
   return (
     <div ref={container}>
       <div className="title text-center">
-        <h1 className="text-2xl  inline-block">The GSAP</h1>
+        <h1 className="text-2xl  inline-block">Web Animation Sketch Pad</h1>
       </div>
       <div className="content inline-block">
         <p className="inline-block">message to the developer</p>
