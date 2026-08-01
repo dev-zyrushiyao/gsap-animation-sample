@@ -41,7 +41,7 @@ export default function MovingImage() {
           "#herman-wrapper",
           {
             delay: 0.1,
-            scale: 1,
+            scaleY: 1,
             y: -220,
             duration: 0.7,
             ease: "power1.in",
@@ -57,23 +57,19 @@ export default function MovingImage() {
           "-=0.5",
         )
         //   herman squashes
-        .to(
-          "#herman-wrapper",
-          {
-            transformOrigin: "center bottom",
-            scaleY: 0.6,
-            scaleX: 1.3,
-            ease: "power1.in",
-            duration: 0.3,
-          },
-          "-=0.1",
-        )
+        .to("#herman-wrapper", {
+          transformOrigin: "center bottom",
+          scaleY: 0.6,
+          scaleX: 1.3,
+          ease: "power1.in",
+          duration: 0.2,
+        })
         //shadow expands when Herman squish
         .to(
           "#shadow",
           {
             opacity: 1,
-            scaleX: 0.7,
+            scaleX: 0.9,
             duration: 0.3,
             ease: "slow",
           },
@@ -101,7 +97,7 @@ export default function MovingImage() {
         </div>
         <div
           id="canvass"
-          className="border-2 border-red-700 h-180 w-200 relative "
+          className="border-2 border-red-700 h-120 w-200 relative "
         >
           <div
             id="hole"
