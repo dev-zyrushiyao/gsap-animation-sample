@@ -80,11 +80,11 @@ export default function MovingImage() {
         // shadow shrinks
         .to("#shadow", { scaleX: 0.5, duration: 1, ease: "power1" }, "<");
 
-      GSDevTools.create({
-        id: "herman-devtools",
-        animation: "herman-tl",
-        // container: "#video-container",
-      });
+      // GSDevTools.create({
+      //   id: "herman-devtools",
+      //   animation: "herman-tl",
+      //   // container: "#video-container",
+      // });
     },
     { scope: container },
   );
