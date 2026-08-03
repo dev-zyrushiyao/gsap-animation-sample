@@ -10,6 +10,7 @@ import AnimatedNavbar from "./component-ui/AnimatedNavbar";
 import TypingAnimationComp from "./component-ui/TypingAnimationComp";
 import AnimatedSplitText from "./component-ui/AnimatedSplitText";
 import AnimatedBoxKeyFrame from "./component-ui/AnimatedBoxKeyFrame";
+import ShapeSVG from "./component-ui/ShapeSVG";
 
 export default function Home() {
   gsap.registerPlugin(useGSAP);
@@ -53,6 +54,7 @@ export default function Home() {
       <TypingAnimationComp />
       <AnimatedSplitText />
       <AnimatedBoxKeyFrame />
+      <ShapeSVG />
     </main>
   );
 }
