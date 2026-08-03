@@ -53,7 +53,7 @@ export default function MovingImage() {
         // set shadow and expand a bit when herman is about to land
         .to(
           "#shadow",
-          { opacity: 0.6, scaleX: 0.5, duration: 0.5, ease: "slow" },
+          { opacity: 0.6, scaleX: 0.5, duration: 0.5, ease: "ease" },
           "-=0.5",
         )
         //   herman squashes

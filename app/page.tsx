@@ -7,6 +7,9 @@ import PrimaryButton from "./component-ui/PrimaryButton";
 import ScalingMessage from "./component-ui/ScalingMessage";
 import MovingImage from "./component-ui/MovingImage";
 import AnimatedNavbar from "./component-ui/AnimatedNavbar";
+import TypingAnimationComp from "./component-ui/TypingAnimationComp";
+import AnimatedSplitText from "./component-ui/AnimatedSplitText";
+import AnimatedBoxKeyFrame from "./component-ui/AnimatedBoxKeyFrame";
 
 export default function Home() {
   gsap.registerPlugin(useGSAP);
@@ -47,6 +50,9 @@ export default function Home() {
       <ScalingMessage />
       <MovingImage />
       <AnimatedNavbar />
+      <TypingAnimationComp />
+      <AnimatedSplitText />
+      <AnimatedBoxKeyFrame />
     </main>
   );
 }

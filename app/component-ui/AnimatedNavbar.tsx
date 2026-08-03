@@ -11,7 +11,7 @@ export default function AnimatedNavbar() {
 
   const { contextSafe } = useGSAP(
     () => {
-      gsap.defaults({ duration: 0.5, ease: "power1.inOut" });
+      gsap.defaults({ duration: 0.3, ease: "power1.inOut" });
     },
     { scope: container },
   );
