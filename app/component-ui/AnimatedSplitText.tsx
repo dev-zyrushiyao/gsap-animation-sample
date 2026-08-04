@@ -24,22 +24,19 @@ export default function AnimatedSplitText() {
         stagger: { amount: 1 },
       });
 
-      const myTextAnimation: gsap.core.Tween = gsap.from(
-        SplitText.create("h2", { type: "words" }).words,
-        {
-          x: 20,
-          opacity: 0,
-          duration: 1.3,
-          rotate: -30,
-          ease: "back.out(4)",
-          repeat: -1,
-          repeatDelay: 1,
-          yoyo: true,
-          stagger: { amount: 1 },
-        },
-      );
+      gsap.from(SplitText.create("h2", { type: "words" }).words, {
+        x: 20,
+        opacity: 0,
+        duration: 1.3,
+        rotate: -30,
+        ease: "back.out(4)",
+        repeat: -1,
+        repeatDelay: 1,
+        yoyo: true,
+        stagger: { amount: 1 },
+      });
 
-    //   GSDevTools.create({ animation: myTextAnimation });
+      //   GSDevTools.create({ animation: myTextAnimation });
     },
     { scope: container },
   );

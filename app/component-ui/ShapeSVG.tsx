@@ -23,7 +23,9 @@ export default function ShapeSVG() {
       gsap.set("#animated-circle", { attr: { strokeOpacity: 0 } });
 
       gsap
-        .timeline({ defaults: { duration: 3 } })
+        .timeline({
+          defaults: { repeat: -1, repeatDelay: 1, yoyo: true, duration: 3 },
+        })
         .to("#animated-circle", {
           duration: 1.5,
           ease: "power1.out",
