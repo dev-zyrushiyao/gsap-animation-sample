@@ -12,6 +12,7 @@ import AnimatedSplitText from "./component-ui/AnimatedSplitText";
 import AnimatedBoxKeyFrame from "./component-ui/AnimatedBoxKeyFrame";
 import ShapeSVG from "./component-ui/ShapeSVG";
 import MovingSVG from "./component-ui/MovingSVG";
+import Grid from "./component-ui/Grid";
 
 export default function Home() {
   gsap.registerPlugin(useGSAP);
@@ -57,6 +58,7 @@ export default function Home() {
       <AnimatedBoxKeyFrame />
       <ShapeSVG />
       <MovingSVG />
+      <Grid />
     </main>
   );
 }
