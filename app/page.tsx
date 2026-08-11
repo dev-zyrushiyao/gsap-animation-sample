@@ -13,6 +13,9 @@ import AnimatedBoxKeyFrame from "./component-ui/AnimatedBoxKeyFrame";
 import ShapeSVG from "./component-ui/ShapeSVG";
 import MovingSVG from "./component-ui/MovingSVG";
 import Grid from "./component-ui/Grid";
+import AnimatedSVG from "./component-ui/AnimatedSVG";
+import CustomSVG from "./component-ui/CustomSVG";
+import RandomSVG from "./component-ui/RandomSVG";
 
 export default function Home() {
   gsap.registerPlugin(useGSAP);
@@ -59,6 +62,8 @@ export default function Home() {
       <ShapeSVG />
       <MovingSVG />
       <Grid />
+      <AnimatedSVG />
+      <CustomSVG />
     </main>
   );
 }
