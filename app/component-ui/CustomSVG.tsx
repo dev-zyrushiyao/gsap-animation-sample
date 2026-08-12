@@ -32,12 +32,12 @@ export default function CustomSVG() {
           {
             scale: 0,
             stagger: 0.05,
-            duration: 1,
-            ease: "back(0.6)",
+            duration: 0.8,
+            ease: "back(0.5)",
           },
-          "-=0.5",
+          "-=0.7",
         );
-      GSDevTools.create({ animation: tl });
+      // GSDevTools.create({ animation: tl });
     },
     { scope: container },
   );

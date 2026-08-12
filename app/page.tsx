@@ -15,7 +15,8 @@ import MovingSVG from "./component-ui/MovingSVG";
 import Grid from "./component-ui/Grid";
 import AnimatedSVG from "./component-ui/AnimatedSVG";
 import CustomSVG from "./component-ui/CustomSVG";
-import RandomSVG from "./component-ui/RandomSVG";
+import HouseSVG from "./component-ui/HouseSVG";
+import TextPath from "./component-ui/TextPath";
 
 export default function Home() {
   gsap.registerPlugin(useGSAP);
@@ -64,6 +65,8 @@ export default function Home() {
       <Grid />
       <AnimatedSVG />
       <CustomSVG />
+      <HouseSVG />
+      <TextPath />
     </main>
   );
 }
