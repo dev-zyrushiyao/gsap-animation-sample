@@ -17,6 +17,7 @@ import AnimatedSVG from "./component-ui/AnimatedSVG";
 import CustomSVG from "./component-ui/CustomSVG";
 import HouseSVG from "./component-ui/HouseSVG";
 import TextPath from "./component-ui/TextPath";
+import DashArray from "./component-ui/DashArray";
 
 export default function Home() {
   gsap.registerPlugin(useGSAP);
@@ -67,6 +68,7 @@ export default function Home() {
       <CustomSVG />
       <HouseSVG />
       <TextPath />
+      <DashArray />
     </main>
   );
 }

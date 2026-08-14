@@ -37,8 +37,8 @@ export default function TextPath() {
           stagger: 0.07,
           keyframes: {
             "20%": { scaleY: 0.2, y: 0, ease: "sine.out" },
-            "50%": { scaleY: 1.3, y: "-100", ease: "sine.in" },
-            "75%": { scaleY: 1, y: "10", ease: "sine.out" },
+            "50%": { scaleY: 1.3, y: "-150", ease: "sine.in" },
+            "75%": { scaleY: 1, y: "10", ease: "power1.out" },
             "85%": { scaleY: 0.3, y: "0", ease: "sine.out" },
             "100%": { scaleY: 1, y: "0", ease: "back(2)" },
           },
@@ -48,7 +48,7 @@ export default function TextPath() {
         .to(chars, { skewX: -30, delay: 0.5 })
         .to(chars, { stagger: { amount: 0.35, from: "end" }, x: 500 }, "-=0.3");
 
-      GSDevTools.create({ animation: tl });
+      // GSDevTools.create({ animation: tl });
     },
     { scope: container },
   );
