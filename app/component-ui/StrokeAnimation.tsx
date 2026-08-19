@@ -64,12 +64,12 @@ export default function StrokeAnimation() {
         strokeDashoffset: spiralLength,
       });
 
-      const tl = gsap
+      gsap
         .timeline({ repeat: -1, repeatDelay: 1, yoyo: true })
         .to(spiral, { strokeDashoffset: 0, duration: 5 })
         .to(spiral, { strokeDashoffset: -518, duration: 5 });
       //()
-      GSDevTools.create({ animation: tl });
+      // GSDevTools.create({ animation: tl });
     },
     { scope: container },
   );

@@ -19,6 +19,7 @@ import HouseSVG from "./component-ui/HouseSVG";
 import TextPath from "./component-ui/TextPath";
 import DashArray from "./component-ui/DashArray";
 import StrokeAnimation from "./component-ui/StrokeAnimation";
+import OtwomoSVG from "./component-ui/OtwomoSVG";
 
 export default function Home() {
   gsap.registerPlugin(useGSAP);
@@ -71,6 +72,7 @@ export default function Home() {
       <TextPath />
       <DashArray />
       <StrokeAnimation />
+      <OtwomoSVG />
     </main>
   );
 }
