@@ -12,9 +12,9 @@ export default function OtwomoSVG() {
 
   useGSAP(
     () => {
-      gsap.set("svg", { opacity: 1, fillOpacity: 0 });
-      gsap.set("svg path , circle", { drawSVG: 0 });
-      const tl = gsap
+      gsap.set("#otwo-char", { opacity: 1, fillOpacity: 0 });
+      gsap.set("#otwo-char path", { drawSVG: 0 });
+      gsap
         .timeline({
           repeat: -1,
           repeatDelay: 1,
@@ -44,12 +44,13 @@ export default function OtwomoSVG() {
             duration: 1.5,
           },
         )
+        .set("#head-bond", {
+          drawSVG: "50% 50%",
+          fillOpacity: 0,
+        })
         .to(
           "#head-bond",
-          {
-            drawSVG: true,
-            duration: 1,
-          },
+          { drawSVG: "true", fillOpacity: 1, duration: 1.5 },
           "<=0.7",
         )
         .to("#ear-left-inner , #ear-right-inner", {
@@ -61,6 +62,36 @@ export default function OtwomoSVG() {
           duration: 1,
         });
 
+      //animation for line curve
+      gsap.set("#colored-curve", { opacity: 1, drawSVG: "0% 10%" });
+      gsap.to("#colored-curve", {
+        repeat: -1,
+        repeatDelay: 1,
+        drawSVG: "100% 110%",
+        ease: "power1",
+        duration: 3,
+      });
+
+      //jelly nav animation
+      gsap.set("#navbar-items", { opacity: 1 });
+      gsap.set("#navbar-items #bar", { attr: { x2: "250" } });
+      const dots: SVGEllipseElement[] = gsap.utils.toArray(
+        "#navbar-items ellipse",
+      );
+      //get the attribute of dot and set it to Gsap
+      dots.forEach((dot) =>
+        dot.addEventListener("click", () => {
+          const endX = dot.getAttribute("cx");
+
+          if (endX === null) return;
+
+          gsap
+            .timeline()
+            .to("#navbar-items line", { ease: "sine", attr: { x2: endX } })
+            .to("#navbar-items line", { ease: "elastic", attr: { x1: endX } });
+        }),
+      );
+
       //   GSDevTools.create({ animation: tl });
     },
     { scope: container },
@@ -69,6 +100,7 @@ export default function OtwomoSVG() {
     <div ref={container}>
       SVG OTWOMO
       <svg
+        id="otwo-char"
         opacity={0}
         width="1000"
         height="1000"
@@ -140,6 +172,84 @@ export default function OtwomoSVG() {
           fill="#3C40B4"
           stroke="black"
           strokeWidth="3"
+        />
+      </svg>
+      <svg
+        id="worm-shape"
+        viewBox="0 0 155 32"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <g id="curve-line">
+          <path
+            id="silver-curve"
+            d="M2.5 15.6058C2.5 15.6058 45 45.1122 77.25 15.6126C109.5 -13.8871 152 15.6058 152 15.6058"
+            stroke="#C3C3C3"
+            strokeWidth={5}
+            strokeLinecap="round"
+          />
+          <path
+            id="colored-curve"
+            d="M2.5 15.6058C2.5 15.6058 45 45.1122 77.25 15.6126C109.5 -13.8871 152 15.6058 152 15.6058"
+            stroke="#3C40B4"
+            opacity={0}
+            strokeWidth={5}
+            strokeLinecap="round"
+          />
+        </g>
+      </svg>
+      {/* jelly navbar */}
+      <svg
+        id="navbar-items"
+        opacity={0}
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 700 300"
+      >
+        <line
+          id="bar"
+          style={{
+            fill: "none",
+            strokeWidth: 55,
+            strokeLinecap: "round",
+            stroke: "rgb(255, 183, 72)",
+          }}
+          x1={250}
+          y1={150}
+          x2={450}
+          y2={150}
+        />
+        <ellipse
+          style={{
+            stroke: "rgb(60, 64, 180)",
+            strokeWidth: 0,
+            fill: "rgb(60, 64, 180)",
+          }}
+          cx={250}
+          cy={150}
+          rx={25}
+          ry={25}
+        />
+        <ellipse
+          style={{
+            stroke: "rgb(60, 64, 180)",
+            strokeWidth: 0,
+            fill: "rgb(60, 64, 180)",
+          }}
+          cx={350}
+          cy={150}
+          rx={25}
+          ry={25}
+        />
+        <ellipse
+          style={{
+            stroke: "rgb(60, 64, 180)",
+            strokeWidth: 0,
+            fill: "rgb(60, 64, 180)",
+          }}
+          cx={450}
+          cy={150}
+          rx={25}
+          ry={25}
         />
       </svg>
     </div>

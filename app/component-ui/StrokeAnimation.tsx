@@ -10,7 +10,7 @@ export default function StrokeAnimation() {
 
   useGSAP(
     () => {
-      gsap.defaults({ duration: 2 });
+      // gsap.defaults({ duration: 2 });
       //line
       gsap.set("#shape-line", {
         opacity: 1,
