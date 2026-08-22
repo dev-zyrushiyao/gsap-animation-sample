@@ -73,26 +73,102 @@ export default function OtwomoSVG() {
       });
 
       //jelly nav animation
-      gsap.set("#navbar-items", { opacity: 1 });
-      gsap.set("#navbar-items #bar", { attr: { x2: "250" } });
-      const dots: SVGEllipseElement[] = gsap.utils.toArray(
-        "#navbar-items ellipse",
-      );
-      //get the attribute of dot and set it to Gsap
-      dots.forEach((dot) =>
-        dot.addEventListener("click", () => {
-          const endX = dot.getAttribute("cx");
+      gsap.set("#navbar-items #bar", { attr: { x2: 250 } });
+      gsap.set("#navbar-items", { autoAlpha: 1 });
+      const line = document.querySelector<SVGLineElement>("#navbar-items #bar");
 
-          if (endX === null) return;
+      const ellipses = document.querySelectorAll("#navbar-items ellipse");
+      const dots: SVGEllipseElement[] = gsap.utils.toArray(ellipses);
+
+      dots.forEach((dot) => {
+        dot.addEventListener("click", () => {
+          const dotXaxis = dot.getAttribute("cx");
+
+          if (!dotXaxis) return;
 
           gsap
-            .timeline()
-            .to("#navbar-items line", { ease: "sine", attr: { x2: endX } })
-            .to("#navbar-items line", { ease: "elastic", attr: { x1: endX } });
-        }),
-      );
+            .timeline({ defaults: { duration: 0.5 } })
+            .to(line, { duration: 0.3, ease: "sine", attr: { x2: dotXaxis } })
+            .to(line, { ease: "bounce", attr: { x1: dotXaxis } });
+        });
+      });
 
-      //   GSDevTools.create({ animation: tl });
+      // Manual method without the TweenTo
+      gsap
+        .timeline({ repeat: -1, defaults: {} })
+        .to("#bungee #ball", {
+          cy: 287,
+          duration: 1.3,
+          ease: "power1.in",
+        })
+        .to(
+          "#bungee #rope",
+          {
+            duration: 0.33,
+            ease: "sine.out",
+            attr: {
+              d: "M150 250C150 250 169.3265 336.8055 250 336.8055C330.6735 336.8055 350 250 350 250",
+            },
+          },
+          "1.09",
+        )
+        .to("#bungee #ball", {
+          cy: 46,
+          duration: 1,
+          ease: "power4.out",
+        })
+        .to(
+          "#bungee #rope",
+          {
+            // delay: 0.65,
+            duration: 0.3,
+            ease: "back(2.5)",
+            attr: {
+              d: "M150 250C150 250 210.948 250 250 250C289.052 250 350 250 350 250",
+            },
+          },
+          "-=1",
+        );
+
+      // using tweenTo
+      const tl = gsap
+        .timeline({ paused: true, defaults: { ease: "none" } })
+        .to("#circ", { duration: 1, y: 247 })
+        .to(
+          "#wire",
+          {
+            attr: {
+              d: "M150 250C150 250 169.3265 336.8055 250 336.8055C330.6735 336.8055 350 250 350 250",
+            },
+          },
+          0.7,
+        );
+
+      const masterTl = gsap
+        .timeline({})
+        .add(
+          tl.tweenTo(1, {
+            ease: "power2.inOut",
+            duration: 1,
+            repeat: 1,
+            yoyo: true,
+          }),
+        )
+        .to(
+          "#wire",
+          {
+            duration: 0.1,
+            repeat: 1,
+            yoyo: true,
+
+            attr: {
+              d: "M150 250C150 250 163 238.5 250 238.5C337 238.5 350 250 350 250",
+            },
+          },
+          "1.43",
+        );
+
+      GSDevTools.create({ animation: masterTl });
     },
     { scope: container },
   );
@@ -252,6 +328,54 @@ export default function OtwomoSVG() {
           ry={25}
         />
       </svg>
+      <div className="flex flex-row">
+        <div className="text-center">
+          <h3>manual tween timeline</h3>
+          <svg
+            width="500"
+            height="500"
+            viewBox="0 0 500 500"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <g id="bungee">
+              <rect width="500" height="500" fill="white" />
+              <circle id="ball" cx="250" cy="46" r="46" fill="#3286C3" />
+              <path
+                id="rope"
+                d="M150 250C150 250 210.948 250 250 250C289.052 250 350 250 350 250"
+                stroke="#00676B"
+                strokeWidth="10"
+                strokeLinecap="round"
+                strokeMiterlimit={120}
+              />
+            </g>
+          </svg>
+        </div>
+        <div className="text-center">
+          <h3>using tweenTo</h3>
+          <svg
+            width="500"
+            height="500"
+            viewBox="0 0 500 500"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <g id="bounce-object">
+              <rect width="500" height="500" fill="white" />
+              <circle id="circ" cx="250" cy="46" r="46" fill="#3286C3" />
+              <path
+                id="wire"
+                d="M150 250C150 250 210.948 250 250 250C289.052 250 350 250 350 250"
+                stroke="#00676B"
+                strokeWidth="10"
+                strokeLinecap="round"
+                strokeMiterlimit={120}
+              />
+            </g>
+          </svg>
+        </div>
+      </div>
     </div>
   );
 }
