@@ -1,0 +1,1 @@
+(globalThis.TURBOPACK||(globalThis.TURBOPACK=[])).push(["object"==typeof document?document.currentScript:void 0,34320,t=>{t.q("/gsap-animation-sample/_next/static/media/herman.0l19h14d3lh_5.png")}]);
