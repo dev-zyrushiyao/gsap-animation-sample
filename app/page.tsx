@@ -22,8 +22,9 @@ import StrokeAnimation from "./component-ui/StrokeAnimation";
 import OtwomoSVG from "./component-ui/OtwomoSVG";
 import JumpingWormSVG from "./component-ui/JumpingWormSVG";
 
+gsap.registerPlugin(useGSAP);
+
 export default function Home() {
-  gsap.registerPlugin(useGSAP);
 
   const container = useRef(null);
 

@@ -3,9 +3,9 @@ import gsap from "gsap";
 import { GSDevTools } from "gsap/GSDevTools";
 import React, { useRef } from "react";
 import { DrawSVGPlugin } from "gsap/DrawSVGPlugin";
-import { EasePack } from "gsap/EasePack";
+import { SlowMo } from "gsap/EasePack";
 
-gsap.registerPlugin(useGSAP, DrawSVGPlugin, EasePack, GSDevTools);
+gsap.registerPlugin(useGSAP, DrawSVGPlugin, SlowMo, GSDevTools);
 
 export default function JumpingWormSVG() {
   const container = useRef(null);
@@ -13,11 +13,11 @@ export default function JumpingWormSVG() {
   useGSAP(
     () => {
       //holes
-      gsap.set("#holes", { opacity: 1 });
+      gsap.set("#holes , #worm-1 , #worm-2", { opacity: 1 });
       gsap.set("#holes ellipse", { scale: 0, transformOrigin: "50% 50%" });
       function openHole(hole: string): gsap.core.Timeline {
         const tl = gsap
-          .timeline({ defaults: { duration: 1 } })
+          .timeline({ defaults: { duration: 0.5 } })
           .to(hole, { scale: 1, ease: "back" })
           .to(hole, { scale: 0, duration: 0.5, ease: "power2.in" }, "+=0.1");
         return tl;
@@ -30,29 +30,49 @@ export default function JumpingWormSVG() {
         drawShort(`${pointsShort.start}% ${pointsShort.end}%`);
       }
 
-      //setup the initial value of start:0 and end:0 to #worm-1
-      updateShort();
+      //worn-2(tall)
+      const pointTall = { start: 0, end: 0 };
+      const drawTall = gsap.quickSetter("#worm-2", "drawSVG");
+      function updateTall(): void {
+        drawTall(`${pointTall.start}% ${pointTall.end}%`);
+      }
 
-      const firstJump = gsap
+      //setup the initial value of start:0 and end:0 to #worm-1 and #worm-2
+      updateShort();
+      updateTall();
+
+      const tlShort = gsap
         .timeline({
           onUpdate: updateShort,
-          repeat: -1,
-          defaults: { duration: 0.8, ease: "slow(0.6, 0.5)" },
+          // repeat: -1,
+          defaults: { duration: 1, ease: "slow(0.5,0.6)" },
         })
         .add(openHole("#hole-1"))
         .to(
           pointsShort,
           {
             end: 100,
-
-            onUpdate: () => console.log(`end: ${pointsShort.end}`),
           },
-          0.5,
+          0.6,
         )
-        .to(pointsShort, { start: 100 }, 0.3);
-      // .add(openHole("#hole-2"));
+        .to(pointsShort, { start: 100 }, 0.3)
+        .add(openHole("#hole-2"), "-=0.9");
 
-      GSDevTools.create({ animation: firstJump });
+      const tlTall = gsap
+        .timeline({
+          onUpdate: updateTall,
+          defaults: { duration: 1, ease: SlowMo.config(0.5, 0.8) },
+        })
+        .add(openHole("#hole-3"))
+        .to(pointTall, { end: 100 }, 0.3)
+        .to(pointTall, { start: 100 }, 0.5)
+        .add(openHole("#hole-4"), "-=0.8");
+
+      const masterTl = gsap.timeline({ repeat: -1 });
+      masterTl.add(tlShort);
+      masterTl.add(tlTall);
+
+      GSDevTools.create({ animation: masterTl });
     },
     { scope: container },
   );
@@ -125,6 +145,7 @@ export default function JumpingWormSVG() {
             <g mask="url(#mask0_3610_9890)">
               <path
                 id="worm-1"
+                opacity={0}
                 d="M94 545C94 545 123.631 287 297.022 287C470.412 287 502 543.503 502 543.503"
                 stroke="#DB4545"
                 strokeWidth={38}
@@ -155,6 +176,7 @@ export default function JumpingWormSVG() {
             <g mask="url(#mask1_3610_9890)">
               <path
                 id="worm-2"
+                opacity={0}
                 d="M801.071 557.996C801.071 557.996 755.893 66.0859 939.477 66.0859C1123.06 66.0859 1096.91 558 1096.91 558"
                 stroke="#DB4545"
                 strokeWidth={38}

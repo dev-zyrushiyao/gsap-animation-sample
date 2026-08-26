@@ -183,7 +183,7 @@ export default function OtwomoSVG() {
           onUpdate: drawArc,
           repeat: -1,
           repeatDelay: 1,
-          defaults: { duration: 1.5, ease: "slow(0.7 , 0.7 , false)" },
+          defaults: { duration: 1, ease: "slow(0.3 , 0.5 , false)" },
         })
         .to(points, { end: 100 })
         .to(points, { start: 100 }, 0.5);
