@@ -21,35 +21,36 @@ import DashArray from "./component-ui/DashArray";
 import StrokeAnimation from "./component-ui/StrokeAnimation";
 import OtwomoSVG from "./component-ui/OtwomoSVG";
 import JumpingWormSVG from "./component-ui/JumpingWormSVG";
+import ClipPathTransition from "./component-ui/ClipPathTransition";
+import TextMaskSVG from "./component-ui/TextMaskSVG";
 
 gsap.registerPlugin(useGSAP);
 
 export default function Home() {
-
   const container = useRef(null);
 
-  useGSAP(
-    () => {
-      gsap.to(".title-container", {
-        gap: "30px",
-        repeat: -1,
-        yoyo: true,
-        ease: "back.inOut",
-      });
-      gsap.to(".name-title", {
-        y: -20,
-        rotate: 15,
-        repeat: -1,
-        yoyo: true,
-        delay: 0.5,
-      });
-    },
-    { scope: container },
-  );
+  // useGSAP(
+  //   () => {
+  //     gsap.to(".title-container", {
+  //       gap: "30px",
+  //       repeat: -1,
+  //       yoyo: true,
+  //       ease: "back.inOut",
+  //     });
+  //     gsap.to(".name-title", {
+  //       y: -20,
+  //       rotate: 15,
+  //       repeat: -1,
+  //       yoyo: true,
+  //       delay: 0.5,
+  //     });
+  //   },
+  //   { scope: container },
+  // );
 
   return (
     <main ref={container}>
-      <div className="flex justify-center bg-lime-600">
+      {/* <div className="flex justify-center bg-lime-600">
         <div className="title-container bg-amber-300 w-fit h-40 flex flex-row text-5xl justify-center items-center p-5">
           <p className="font-serif name-title relative ">Z</p>
           <p className="font-serif name-title relative ">Y</p>
@@ -75,7 +76,9 @@ export default function Home() {
       <DashArray />
       <StrokeAnimation />
       <OtwomoSVG />
-      <JumpingWormSVG />
+      <JumpingWormSVG /> */}
+      <ClipPathTransition />
+      <TextMaskSVG />
     </main>
   );
 }

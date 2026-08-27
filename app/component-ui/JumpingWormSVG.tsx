@@ -71,8 +71,6 @@ export default function JumpingWormSVG() {
       const masterTl = gsap.timeline({ repeat: -1 });
       masterTl.add(tlShort);
       masterTl.add(tlTall);
-
-      GSDevTools.create({ animation: masterTl });
     },
     { scope: container },
   );
