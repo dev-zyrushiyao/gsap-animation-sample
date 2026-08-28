@@ -18,7 +18,7 @@ export default function SpotlightSVG() {
         .to("#light", { x: 0, duration: 3, ease: "power1" })
         .to("#light", { scale: 5, ease: "power1" }, "+=0.5");
 
-      GSDevTools.create({ animation: tl });
+      // GSDevTools.create({ animation: tl });
     },
     { scope: container },
   );

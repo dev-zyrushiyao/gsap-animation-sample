@@ -24,6 +24,8 @@ import JumpingWormSVG from "./component-ui/JumpingWormSVG";
 import ClipPathTransition from "./component-ui/ClipPathTransition";
 import TextMaskSVG from "./component-ui/TextMaskSVG";
 import SpotlightSVG from "./component-ui/SpotlightSVG";
+import MarioHatSVG from "./component-ui/MarioHatSVG";
+import BlockSVG from "./component-ui/BlockSVG";
 
 gsap.registerPlugin(useGSAP);
 
@@ -81,6 +83,8 @@ export default function Home() {
       <ClipPathTransition />
       <TextMaskSVG />
       <SpotlightSVG />
+      <MarioHatSVG />
+      <BlockSVG />
     </main>
   );
 }
