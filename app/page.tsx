@@ -23,6 +23,7 @@ import OtwomoSVG from "./component-ui/OtwomoSVG";
 import JumpingWormSVG from "./component-ui/JumpingWormSVG";
 import ClipPathTransition from "./component-ui/ClipPathTransition";
 import TextMaskSVG from "./component-ui/TextMaskSVG";
+import SpotlightSVG from "./component-ui/SpotlightSVG";
 
 gsap.registerPlugin(useGSAP);
 
@@ -79,6 +80,7 @@ export default function Home() {
       <JumpingWormSVG /> */}
       <ClipPathTransition />
       <TextMaskSVG />
+      <SpotlightSVG />
     </main>
   );
 }
