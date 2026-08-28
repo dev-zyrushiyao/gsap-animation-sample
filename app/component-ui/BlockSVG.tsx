@@ -15,7 +15,12 @@ export default function BlockSVG() {
       });
 
       gsap
-        .timeline({ defaults: { ease: "power1", duration: 1 } })
+        .timeline({
+          repeat: -1,
+          repeatDelay: 1,
+          yoyo: true,
+          defaults: { ease: "power1", duration: 1 },
+        })
         .to("#block", { y: 0 })
         .to("#shadow", { scale: 1 }, "<");
     },

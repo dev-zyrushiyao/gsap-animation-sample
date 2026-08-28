@@ -9,10 +9,8 @@ export default function MarioHatSVG() {
 
   useGSAP(
     () => {
-      //   gsap.set("#mask-linear", { opacity: 0 });
-      gsap.set("#mario-colored , #mask-group ", { opacity: 1 });
-
       tween.current = gsap.to("#mario-colored", {
+        paused: true,
         opacity: 0,
         ease: "sine",
         duration: 0.5,
@@ -43,7 +41,7 @@ export default function MarioHatSVG() {
       >
         <g id="mario-hat-animation" clipPath="url(#clip0_3643_9945)">
           <rect width={663} height={587} fill="white" />
-          <g id="mask-group" opacity={0}>
+          <g id="mask-group">
             <rect
               id="mario-black"
               x={-109}
@@ -56,15 +54,14 @@ export default function MarioHatSVG() {
               d="M576.884 342.004L556.885 355L557.885 324.5L541.389 303.5L524.893 285C524.893 285 484.902 225 333.189 222.5C181.476 220 150.829 274.936 140.979 285C131.128 295.064 111.985 313 109.986 323C107.986 333 108.486 349.5 108.486 349.5C108.486 349.5 104.989 346.5 96.9909 343C88.9927 339.5 85.4935 341 85.4935 341C85.4935 341 66.5014 310.5 70.0006 263C73.4998 215.5 101.491 172.504 101.491 172.504C101.491 172.504 179.473 9 333.189 9C486.904 9 564.887 172.504 564.887 172.504C564.887 172.504 583.882 202.5 591.881 257.254C599.879 312.008 576.884 342.004 576.884 342.004Z"
               fill="url(#pattern1_3643_9945)"
             />
+            <rect
+              id="mario-colored"
+              x={-109}
+              width={881}
+              height={587}
+              fill="url(#pattern2_3643_9945)"
+            />
           </g>
-          <rect
-            id="mario-colored"
-            opacity={0}
-            x={-109}
-            width={881}
-            height={587}
-            fill="url(#pattern2_3643_9945)"
-          />
         </g>
         <defs>
           <pattern

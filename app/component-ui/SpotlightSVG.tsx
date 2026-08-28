@@ -12,7 +12,11 @@ export default function SpotlightSVG() {
   useGSAP(
     () => {
       const tl = gsap
-        .timeline({ ease: "power1.inOut", defaults: { duration: 2 } })
+        .timeline({
+          repeat: -1,
+          ease: "power1.inOut",
+          defaults: { duration: 2 },
+        })
         .set("#light", { transformOrigin: "center center" })
         .fromTo("#light", { x: -300 }, { x: 300 })
         .to("#light", { x: 0, duration: 3, ease: "power1" })
