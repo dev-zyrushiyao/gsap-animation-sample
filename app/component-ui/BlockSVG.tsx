@@ -8,7 +8,7 @@ export default function BlockSVG() {
   useGSAP(
     () => {
       gsap
-        .timeline()
+        .timeline({ repeat: -1, repeatDelay: 1.5, yoyo: true })
         .set(".side , #shadow", { opacity: 0 })
         .from("#block-animate #top", {
           scale: 0,
