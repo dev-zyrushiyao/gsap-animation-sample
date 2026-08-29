@@ -7,22 +7,16 @@ export default function BlockSVG() {
 
   useGSAP(
     () => {
-      gsap.set("#block", { opacity: 1, y: 230 });
-      gsap.set("#shadow", {
-        opacity: 1,
-        scale: 0,
-        transformOrigin: "100% 0%",
-      });
-
       gsap
-        .timeline({
-          repeat: -1,
-          repeatDelay: 1,
-          yoyo: true,
-          defaults: { ease: "power1", duration: 1 },
+        .timeline()
+        .set(".side , #shadow", { opacity: 0 })
+        .from("#block-animate #top", {
+          scale: 0,
+          transformOrigin: "50% 50%",
         })
-        .to("#block", { y: 0 })
-        .to("#shadow", { scale: 1 }, "<");
+        .set(".side , #shadow", { opacity: 1 })
+        .to("#block-animate", { y: -200, ease: "back(2)" })
+        .to("#shadow", { scaleX: -1.9, ease: "back(2)" }, "<");
     },
     { scope: container },
   );
@@ -30,70 +24,68 @@ export default function BlockSVG() {
   return (
     <div ref={container}>
       <svg
-        width={500}
+        width={713}
         height={699}
-        viewBox="0 0 500 699"
+        viewBox="0 0 713 699"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
       >
-        <g id="Frame 1593">
-          <rect width={500} height={699} fill="white" />
-          <g id="block-group">
-            <mask
-              id="mask0_3650_10045"
-              style={{
-                maskType: "alpha",
-              }}
-              maskUnits="userSpaceOnUse"
-              x={191}
-              y={256}
-              width={118}
-              height={254}
-            >
-              <g id="block-mask">
-                <path
-                  d="M191 497.005H249.8V256.005H191V497.005Z"
-                  fill="#76B273"
-                />
-                <path
-                  d="M249.797 496.997H308.997V255.997H249.797V496.997Z"
-                  fill="#76B273"
-                />
-                <path
-                  d="M191 497L249.791 510L309 497L249.791 485.5L191 497Z"
-                  fill="#76B273"
-                />
-              </g>
-            </mask>
-            <g mask="url(#mask0_3650_10045)">
-              <g id="block" opacity={0}>
-                <rect
-                  id="side-left"
-                  x={191}
-                  y={269.258}
-                  width={59}
-                  height={241}
-                  fill="#31384C"
-                />
-                <path
-                  id="side-right"
-                  d="M249.797 269.258H308.997V510.258H249.797V269.258Z"
-                  fill="#707C9A"
-                />
-                <path
-                  id="top"
-                  d="M191 269.258L249.791 256.258L309 269.258L249.791 280.758L191 269.258Z"
-                  fill="#D9D9D9"
-                />
-              </g>
+        <rect width={713} height={699} fill="white" />
+        <rect
+          id="shadow"
+          width={100}
+          height={100}
+          transform="matrix(0.866025 -0.5 0.866025 0.5 270 496)"
+          fill="#434343"
+        />
+        <g id="block" overflow={"visible"}>
+          <mask
+            id="mask0_3650_10045"
+            style={{
+              maskType: "alpha",
+            }}
+            maskUnits="userSpaceOnUse"
+            x={270}
+            y={154}
+            width={174}
+            height={392}
+          >
+            <g id="Vector">
+              <path d="M270 496H357V154H270V496Z" fill="#1E6C2A" />
+              <path d="M357 496H444V154H357V496Z" fill="#1E6C2A" />
+              <path
+                d="M270 496L356.603 546L443.205 496L356.603 446L270 496Z"
+                fill="#1E6C2A"
+              />
+            </g>
+          </mask>
+          <g mask="url(#mask0_3650_10045)">
+            <g id="block-animate">
+              <rect
+                className="side side-left"
+                x={270}
+                y={496}
+                width={87}
+                height={342}
+                fill="#4B5467"
+              />
+              <rect
+                className="side side-right"
+                x={357}
+                y={496}
+                width={87}
+                height={342}
+                fill="#61B6DA"
+              />
+              <rect
+                id="top"
+                width={100}
+                height={100}
+                transform="matrix(0.866025 -0.5 0.866025 0.5 270 496)"
+                fill="#5E9EC7"
+              />
             </g>
           </g>
-          <path
-            opacity={0}
-            id="shadow"
-            d="M16.4977 527.495L190.999 497L249.999 510L55.1632 567.001L16.4977 527.495Z"
-            fill="#3D3D3D"
-          />
         </g>
       </svg>
     </div>
