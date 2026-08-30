@@ -27,6 +27,8 @@ import SpotlightSVG from "./component-ui/SpotlightSVG";
 import MarioHatSVG from "./component-ui/MarioHatSVG";
 import BlockSVG from "./component-ui/BlockSVG";
 import FishLens from "./component-ui/FishLens";
+import FlagFilter from "./component-ui/FlagFilter";
+import PixelHouseFilter from "./component-ui/PixelHouseFilter";
 
 gsap.registerPlugin(useGSAP);
 
@@ -87,6 +89,8 @@ export default function Home() {
       <MarioHatSVG />
       <BlockSVG />
       <FishLens />
+      <FlagFilter />
+      <PixelHouseFilter />
     </main>
   );
 }
