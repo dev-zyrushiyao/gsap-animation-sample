@@ -29,6 +29,7 @@ import BlockSVG from "./component-ui/BlockSVG";
 import FishLens from "./component-ui/FishLens";
 import FlagFilter from "./component-ui/FlagFilter";
 import PixelHouseFilter from "./component-ui/PixelHouseFilter";
+import ShapeLiquidSVG from "./component-ui/ShapeLiquidSVG";
 
 gsap.registerPlugin(useGSAP);
 
@@ -91,6 +92,7 @@ export default function Home() {
       <FishLens />
       <FlagFilter />
       <PixelHouseFilter />
+      <ShapeLiquidSVG />
     </main>
   );
 }
