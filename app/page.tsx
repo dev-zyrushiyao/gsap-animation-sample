@@ -31,6 +31,7 @@ import FlagFilter from "./component-ui/FlagFilter";
 import PixelHouseFilter from "./component-ui/PixelHouseFilter";
 import ShapeLiquidSVG from "./component-ui/ShapeLiquidSVG";
 import GoeyBoxSVG from "./component-ui/GoeyBoxSVG";
+import GoeyText from "./component-ui/GoeyText";
 
 gsap.registerPlugin(useGSAP);
 
@@ -95,6 +96,7 @@ export default function Home() {
       <PixelHouseFilter />
       <ShapeLiquidSVG />
       <GoeyBoxSVG />
+      <GoeyText />
     </main>
   );
 }

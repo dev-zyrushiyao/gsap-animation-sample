@@ -34,14 +34,16 @@ export default function GoeyBoxSVG() {
       });
 
       clickTl.current = gsap
-        .timeline({ paused: true })
+        .timeline({
+          paused: true,
+          defaults: { duration: 0.3 },
+        })
         .fromTo(
           ".div-box-2",
           { scale: 0, transformOrigin: "0% 0%" },
           { scaleX: 1, scaleY: 1 },
         )
-        .to(".div-box-2", { scaleX: 3 })
-        // .to(".message-box", { opacity: 1 })
+        .to(".div-box-2", { scaleX: 3, duration: 0.4, ease: "back(2)" })
         .to(splitText.chars, {
           scale: 1,
           opacity: 1,
@@ -59,7 +61,7 @@ export default function GoeyBoxSVG() {
       clickTl.current?.reversed(true);
     }
 
-    setIsClicked((prev) => !prev);
+    setIsClicked((prev): boolean => !prev);
   }
 
   return (
