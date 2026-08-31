@@ -16,7 +16,12 @@ export default function ShapeLiquidSVG() {
   );
   return (
     <div ref={container}>
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 500">
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 500 500"
+        width={500}
+        height={500}
+      >
         <defs>
           <filter
             id="gaussian-blur-filter-0"
