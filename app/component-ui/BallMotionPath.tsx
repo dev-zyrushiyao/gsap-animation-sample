@@ -12,23 +12,50 @@ export default function BallMotionPath() {
 
   useGSAP(
     () => {
-      const balls = gsap.utils.toArray(".balls ellipse");
-
-      gsap.to(balls, {
-        motionPath: {
-          path: ".trail-green",
-          align: ".trail-green",
-          autoRotate: true,
-          alignOrigin: [0.5, 0.5],
-        },
-        duration: 5,
+      const balls: SVGEllipseElement[] = gsap.utils.toArray(".balls ellipse");
+      const tl = gsap.timeline({
         repeat: -1,
-        stagger: 1,
-        ease: "power1.inOut",
+        defaults: { duration: 3, ease: "none" },
+      });
+
+      //each ball have a constant distance from each other and has different start and ending points. so it stays where on its original position, preventing overlap.
+      balls.forEach((ball, index) => {
+        const startingPoint: number = index / balls.length;
+        console.log("startingPoint", startingPoint);
+
+        //individual ball animation
+        tl.to(
+          ball,
+          {
+            motionPath: {
+              path: ".trail-green",
+              align: ".trail-green",
+              autoRotate: true,
+              alignOrigin: [0.5, 0.5],
+              start: startingPoint,
+              end: startingPoint + 1,
+            },
+          },
+          0,
+        );
       });
     },
     { scope: container },
   );
+
+  //normal stagger animation
+  //     gsap.to(balls, {
+  //     motionPath: {
+  //       path: ".trail-green",
+  //       align: ".trail-green",
+  //       autoRotate: true,
+  //       alignOrigin: [0.5, 0.5],
+  //     },
+  //     duration: 5,
+  //     repeat: -1,
+  //     stagger: 1,
+  //     ease: "power1.inOut",
+  //   });
 
   return (
     <div ref={container}>
@@ -335,7 +362,7 @@ export default function BallMotionPath() {
             filter: "url(#filter-1)",
             transformOrigin: "376.719px 301.2px",
           }}
-          className=".holes"
+          className="holes"
         />
         <path
           d="M 0.532 190.506 L 76.395 166.044 C 65.207 173.809 59.812 192.388 59.96 200 C 58.814 207.782 76.395 233.707 76.395 233.707 L 0 209.777 L 0.532 190.506 Z"
@@ -343,7 +370,7 @@ export default function BallMotionPath() {
             filter: "url(#drop-shadow-filter-0)",
             fill: "rgb(89, 150, 117)",
           }}
-          className=".holes"
+          className="holes"
         />
       </svg>
     </div>
