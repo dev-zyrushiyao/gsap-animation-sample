@@ -33,6 +33,8 @@ import ShapeLiquidSVG from "./component-ui/ShapeLiquidSVG";
 import GoeyBoxSVG from "./component-ui/GoeyBoxSVG";
 import GoeyText from "./component-ui/GoeyText";
 import PatternSVG from "./component-ui/PatternSVG";
+import ArrowMotionPath from "./component-ui/ArrowMotionPath";
+import BallMotionPath from "./component-ui/BallMotionPath";
 
 gsap.registerPlugin(useGSAP);
 
@@ -99,6 +101,8 @@ export default function Home() {
       <GoeyBoxSVG />
       <GoeyText />
       <PatternSVG />
+      <ArrowMotionPath />
+      <BallMotionPath />
     </main>
   );
 }
