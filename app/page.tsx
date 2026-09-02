@@ -35,6 +35,7 @@ import GoeyText from "./component-ui/GoeyText";
 import PatternSVG from "./component-ui/PatternSVG";
 import ArrowMotionPath from "./component-ui/ArrowMotionPath";
 import BallMotionPath from "./component-ui/BallMotionPath";
+import BlobMotionPath from "./component-ui/BlobMotionPath";
 
 gsap.registerPlugin(useGSAP);
 
@@ -103,6 +104,7 @@ export default function Home() {
       <PatternSVG />
       <ArrowMotionPath />
       <BallMotionPath />
+      <BlobMotionPath />
     </main>
   );
 }

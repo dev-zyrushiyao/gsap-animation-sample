@@ -21,7 +21,7 @@ export default function BallMotionPath() {
       //each ball have a constant distance from each other and has different start and ending points. so it stays where on its original position, preventing overlap.
       balls.forEach((ball, index) => {
         const startingPoint: number = index / balls.length;
-        console.log("startingPoint", startingPoint);
+        // console.log("startingPoint", startingPoint);
 
         //individual ball animation
         tl.to(
