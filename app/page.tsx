@@ -36,6 +36,7 @@ import PatternSVG from "./component-ui/PatternSVG";
 import ArrowMotionPath from "./component-ui/ArrowMotionPath";
 import BallMotionPath from "./component-ui/BallMotionPath";
 import BlobMotionPath from "./component-ui/BlobMotionPath";
+import ShapeMorp from "./component-ui/ShapeMorp";
 
 gsap.registerPlugin(useGSAP);
 
@@ -105,6 +106,7 @@ export default function Home() {
       <ArrowMotionPath />
       <BallMotionPath />
       <BlobMotionPath />
+      <ShapeMorp />
     </main>
   );
 }
