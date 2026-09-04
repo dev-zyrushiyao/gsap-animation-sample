@@ -37,6 +37,7 @@ import ArrowMotionPath from "./component-ui/ArrowMotionPath";
 import BallMotionPath from "./component-ui/BallMotionPath";
 import BlobMotionPath from "./component-ui/BlobMotionPath";
 import ShapeMorp from "./component-ui/ShapeMorp";
+import MorphPageTransition from "./component-ui/MorphPageTransition";
 
 gsap.registerPlugin(useGSAP);
 
@@ -107,6 +108,7 @@ export default function Home() {
       <BallMotionPath />
       <BlobMotionPath />
       <ShapeMorp />
+      <MorphPageTransition />
     </main>
   );
 }
