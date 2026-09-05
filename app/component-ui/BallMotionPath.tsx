@@ -70,7 +70,7 @@ export default function BallMotionPath() {
             cx={89.344}
             cy={99.992}
             r={10.714}
-            id="gradient-1"
+            id="ball-ball-gradient-1"
             gradientTransform="matrix(0.961376, 0.688334, -0.719252, 1.004558, 57.074408, -76.937723)"
           >
             <stop
@@ -91,7 +91,7 @@ export default function BallMotionPath() {
             cx={123.389}
             cy={84.675}
             r={10.714}
-            id="gradient-3"
+            id="ball-gradient-3"
           >
             <stop
               offset={0}
@@ -111,7 +111,7 @@ export default function BallMotionPath() {
             cx={152.102}
             cy={85.354}
             r={10.714}
-            id="gradient-4"
+            id="ball-gradient-4"
           >
             <stop
               offset={0}
@@ -132,7 +132,7 @@ export default function BallMotionPath() {
             cx={207.999}
             cy={84.948}
             r={10.714}
-            id="gradient-5"
+            id="ball-gradient-5"
           >
             <stop
               offset={0}
@@ -148,7 +148,7 @@ export default function BallMotionPath() {
             />
           </radialGradient>
           <filter
-            id="drop-shadow-filter-0"
+            id="cone-shadow"
             colorInterpolationFilters="sRGB"
             x="-50%"
             y="-50%"
@@ -204,7 +204,7 @@ export default function BallMotionPath() {
             cx={97.539}
             cy={85.627}
             r={10.714}
-            id="gradient-6"
+            id="ball-gradient-6"
           >
             <stop
               offset={0}
@@ -300,7 +300,7 @@ export default function BallMotionPath() {
         >
           <ellipse
             style={{
-              fill: "url(#gradient-1)",
+              fill: "url(#ball-ball-gradient-1)",
             }}
             cx={73.476}
             cy={89.203}
@@ -309,7 +309,7 @@ export default function BallMotionPath() {
           />
           <ellipse
             style={{
-              fill: "url(#gradient-6)",
+              fill: "url(#ball-gradient-6)",
             }}
             cx={100.817}
             cy={89.203}
@@ -318,7 +318,7 @@ export default function BallMotionPath() {
           />
           <ellipse
             style={{
-              fill: "url(#gradient-4)",
+              fill: "url(#ball-gradient-4)",
             }}
             cx={155.498}
             cy={89.203}
@@ -327,7 +327,7 @@ export default function BallMotionPath() {
           />
           <ellipse
             style={{
-              fill: "url(#gradient-3)",
+              fill: "url(#ball-gradient-3)",
             }}
             cx={127.011}
             cy={89.203}
@@ -347,7 +347,7 @@ export default function BallMotionPath() {
           />
           <ellipse
             style={{
-              fill: "url(#gradient-5)",
+              fill: "url(#ball-gradient-5)",
             }}
             cx={210.519}
             cy={88.384}
@@ -367,7 +367,7 @@ export default function BallMotionPath() {
         <path
           d="M 0.532 190.506 L 76.395 166.044 C 65.207 173.809 59.812 192.388 59.96 200 C 58.814 207.782 76.395 233.707 76.395 233.707 L 0 209.777 L 0.532 190.506 Z"
           style={{
-            filter: "url(#drop-shadow-filter-0)",
+            filter: "url(#cone-shadow)",
             fill: "rgb(89, 150, 117)",
           }}
           className="holes"

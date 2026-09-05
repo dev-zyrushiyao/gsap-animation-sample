@@ -37,7 +37,7 @@ export default function TextMaskSVG() {
             y1={71.726}
             x2={250}
             y2={228.275}
-            id="gradient-0"
+            id="text-mask-gradient"
             gradientTransform="matrix(0, 3.193957, -3.193957, 0, 729.100362, -643.596583)"
           >
             <stop offset={0} style={{}} />
@@ -69,7 +69,7 @@ export default function TextMaskSVG() {
               height={156.549}
               style={{
                 stroke: "rgb(0, 0, 0)",
-                fill: "url(#gradient-0)",
+                fill: "url(#text-mask-gradient)",
               }}
             />
           </mask>

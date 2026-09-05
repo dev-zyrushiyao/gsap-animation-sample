@@ -15,7 +15,12 @@ export default function ShapeMorp() {
       //converts all to path
       MorphSVGPlugin.convertToPath(".shapes-g > *");
 
-      const tl = gsap.timeline({ defaults: { duration: 1, ease: "elastic" } });
+      const tl = gsap.timeline({
+        repeat: -1,
+        yoyo: true,
+        repeatDelay: 1,
+        defaults: { duration: 1, ease: "elastic" },
+      });
 
       //targets all the path and converts them to an array of paths
       const shapes = gsap.utils.toArray<SVGPathElement>(".shapes-g > path");

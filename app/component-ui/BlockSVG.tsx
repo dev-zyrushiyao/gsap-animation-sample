@@ -16,7 +16,8 @@ export default function BlockSVG() {
         })
         .set(".side , #shadow", { opacity: 1 })
         .to("#block-animate", { y: -200, ease: "back(2)" })
-        .to("#shadow", { scaleX: -1.9, ease: "back(2)" }, "<");
+        .to("#shadow", { scaleX: -1.9, ease: "back(2)" }, "<")
+        .timeScale(0.5);
     },
     { scope: container },
   );

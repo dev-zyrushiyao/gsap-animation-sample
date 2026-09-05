@@ -47,13 +47,12 @@ export default function MorphPageTransition() {
       const masterTl = gsap.timeline({
         id: "SVG Shape Transition",
         repeat: -1,
-        repeatDelay: 1,
-        // duration: 2,
+        repeatDelay: 3,
       });
       masterTl.add(tlMorp1);
       masterTl.add(tlMorp2, 1);
 
-      GSDevTools.create({ animation: masterTl });
+      // GSDevTools.create({ animation: masterTl });
     },
 
     { scope: container },
