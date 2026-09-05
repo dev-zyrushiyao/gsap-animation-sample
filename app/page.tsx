@@ -39,6 +39,7 @@ import BlobMotionPath from "./component-ui/BlobMotionPath";
 import ShapeMorp from "./component-ui/ShapeMorp";
 import MorphPageTransition from "./component-ui/MorphPageTransition";
 import BlendingBanner from "./component-ui/BlendingBanner";
+import FlowerSVG from "./component-ui/FlowerSVG";
 
 gsap.registerPlugin(useGSAP);
 
@@ -111,6 +112,7 @@ export default function Home() {
       <ShapeMorp />
       <MorphPageTransition />
       <BlendingBanner />
+      <FlowerSVG />
     </main>
   );
 }
