@@ -18,13 +18,13 @@ export default function CircleDrawChallenge() {
       gsap.set(circleA, { rotate: -90, transformOrigin: "50% 50%" });
       gsap.set(circleB, { rotate: -90, transformOrigin: "50% 50%" });
 
-      const tl = gsap
+      gsap
         .timeline()
         .fromTo(circleA, { drawSVG: "100% 100%" }, { drawSVG: "150% 50%" })
         .from(lineConnector, { drawSVG: 0 })
         .fromTo(circleB, { drawSVG: "100% 100%" }, { drawSVG: "150% 50%" });
 
-      GSDevTools.create({ animation: tl });
+      //   GSDevTools.create({ animation: tl });
     },
     { scope: container },
   );

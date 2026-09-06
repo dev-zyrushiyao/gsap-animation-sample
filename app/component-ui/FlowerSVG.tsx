@@ -334,7 +334,7 @@ export default function FlowerSVG() {
 
       <div className="bg-blue-200 h-dvh w-full flex flex-col justify-center items-center">
         <h3 className="text-[clamp(1.5rem,4vw,3rem)] font-bold bg-amber-600">
-          Scroll down
+          Scroll Up
         </h3>
       </div>
     </div>
