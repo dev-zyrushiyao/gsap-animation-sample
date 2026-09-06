@@ -40,6 +40,7 @@ import ShapeMorp from "./component-ui/ShapeMorp";
 import MorphPageTransition from "./component-ui/MorphPageTransition";
 import BlendingBanner from "./component-ui/BlendingBanner";
 import FlowerSVG from "./component-ui/FlowerSVG";
+import CircleDrawChallenge from "./component-ui/CircleDrawChallenge";
 
 gsap.registerPlugin(useGSAP);
 
@@ -67,7 +68,7 @@ export default function Home() {
 
   return (
     <main ref={container}>
-      <div className="flex justify-center bg-lime-600">
+      {/* <div className="flex justify-center bg-lime-600">
         <div className="title-container bg-amber-300 w-fit h-40 flex flex-row text-5xl justify-center items-center p-5">
           <p className="font-serif name-title relative ">Z</p>
           <p className="font-serif name-title relative ">Y</p>
@@ -112,7 +113,8 @@ export default function Home() {
       <ShapeMorp />
       <MorphPageTransition />
       <BlendingBanner />
-      <FlowerSVG />
+      <FlowerSVG /> */}
+      <CircleDrawChallenge />
     </main>
   );
 }
