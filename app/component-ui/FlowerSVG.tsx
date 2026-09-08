@@ -1,3 +1,5 @@
+"use client";
+
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import DrawSVGPlugin from "gsap/DrawSVGPlugin";
@@ -90,19 +92,15 @@ export default function FlowerSVG() {
         2.7,
       );
 
-      const svg = document.querySelector("svg");
-
-      if (!svg) return;
-
       ScrollTrigger.create({
-        trigger: "svg",
+        trigger: container.current,
         animation: flowerTl,
         markers: true,
         pin: true,
 
         scrub: true,
-        start: "top center",
-        end: "center center",
+        start: "center center",
+        end: "+=1500",
       });
     },
     { scope: container },
@@ -110,15 +108,19 @@ export default function FlowerSVG() {
 
   return (
     <div>
-      <div className="flower-wrapper w-full min-h-dvh bg-red-200 flex items-center justify-center">
+      <div className="w-full min-h-dvh bg-red-200 flex items-center justify-center">
         <h3 className="text-5xl font-bold">Scroll down</h3>
       </div>
 
       <div
         ref={container}
-        className="w-full max-w-md  bg-red-200 flower-wrapper"
+        className="w-full min-h-dvh bg-yellow-200 flower-wrapper "
       >
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 300">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 300 300"
+          className="w-full max-w-[300px] h-auto"
+        >
           <defs>
             <filter
               id="leaf-right-filter-shadow"
